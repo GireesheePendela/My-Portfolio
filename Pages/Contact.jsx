@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Download, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Download, CheckCircle2, Loader2, ExternalLink } from 'lucide-react';
 import { Button } from '../Components/ui/button';
 import { Input } from '../Components/ui/input';
 import { Textarea } from '../Components/ui/textarea';
@@ -14,6 +14,21 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showCopied, setShowCopied] = useState(false);
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const email = 'gp590@scarletmail.rutgers.edu';
+    
+    // Try to open mail client
+    window.location.href = `mailto:${email}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -113,18 +128,41 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="relative"
               >
                 {info.link ? (
-                  <a
-                    href={info.link}
-                    className="block bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all group"
-                  >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <info.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">{info.label}</h3>
-                    <p className="text-slate-600 leading-relaxed">{info.value}</p>
-                  </a>
+                  info.label === 'Email' ? (
+                    <button
+                      onClick={handleEmailClick}
+                      className="w-full text-left bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all group"
+                    >
+                      <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                        <info.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">{info.label}</h3>
+                      <p className="text-slate-600 leading-relaxed">{info.value}</p>
+                      {showCopied && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="absolute top-4 right-4 bg-slate-900 text-white text-sm px-3 py-2 rounded-lg"
+                        >
+                          Email copied!
+                        </motion.div>
+                      )}
+                    </button>
+                  ) : (
+                    <a
+                      href={info.link}
+                      className="block bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all group"
+                    >
+                      <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                        <info.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">{info.label}</h3>
+                      <p className="text-slate-600 leading-relaxed">{info.value}</p>
+                    </a>
+                  )
                 ) : (
                   <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border-2 border-slate-200">
                     <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mb-4`}>

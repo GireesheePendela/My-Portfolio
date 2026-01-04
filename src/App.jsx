@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from '../Layout.jsx';
 import Home from '../Pages/Home';
 import About from '../Pages/About';
@@ -11,9 +11,20 @@ import Honors from '../Pages/Honors';
 import Contact from '../Pages/Contact';
 import { createPageUrl } from '../utils';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to={createPageUrl('Home')} replace />} />

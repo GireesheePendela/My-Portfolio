@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Code, Database, Brain, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { createPageUrl } from '../utils';
 
 export default function Home() {
+  const [showCopied, setShowCopied] = useState(false);
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const email = 'gp590@scarletmail.rutgers.edu';
+    
+    // Try to open mail client
+    window.location.href = `mailto:${email}`;
+    
+    // Copy to clipboard as fallback
+    navigator.clipboard.writeText(email).then(() => {
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+    });
+  };
+
   const stats = [
     { value: '98.45%', label: 'ML Model Accuracy', icon: Brain },
     { value: '1,000+', label: 'Users Served', icon: Code },
@@ -107,12 +123,21 @@ export default function Home() {
               >
                 <Linkedin className="w-5 h-5 text-slate-700 group-hover:text-white transition-colors" />
               </a>
-              <a
-                href="mailto:gp590@scarletmail.rutgers.edu"
-                className="w-12 h-12 bg-white hover:bg-purple-600 border-2 border-slate-200 hover:border-purple-600 rounded-xl flex items-center justify-center transition-all group"
+              <button
+                onClick={handleEmailClick}
+                className="relative w-12 h-12 bg-white hover:bg-purple-600 border-2 border-slate-200 hover:border-purple-600 rounded-xl flex items-center justify-center transition-all group"
               >
                 <Mail className="w-5 h-5 text-slate-700 group-hover:text-white transition-colors" />
-              </a>
+                {showCopied && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-3 py-1 rounded-lg whitespace-nowrap"
+                  >
+                    Email copied!
+                  </motion.div>
+                )}
+              </button>
             </div>
           </motion.div>
         </div>

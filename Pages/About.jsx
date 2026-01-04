@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Heart, Target, Zap, BookOpen, Users, Award, Code2 } from 'lucide-react';
+import { GraduationCap, Heart, Target, Zap, BookOpen, Users, Award, Code2, Code, Briefcase, Globe } from 'lucide-react';
 
 export default function About() {
   const values = [
@@ -36,11 +36,11 @@ export default function About() {
       color: 'bg-blue-100 text-blue-800'
     },
     {
-      year: '2024',
-      title: 'Bachelor of Technology',
-      subtitle: 'Computer Science - IIITM, India',
-      description: 'Built foundation in algorithms, data structures, and software engineering with hands-on project experience.',
-      icon: Award,
+      year: '2020 - 2024',
+      title: 'Indian Institute of Information Technology and Management (IIITM)',
+      subtitle: 'Bachelor of Technology in Computer Science, India',
+      description: 'Built a strong foundation in computer science fundamentals, spanning algorithms, data structures, databases, and scalable software systems.',
+      icon: BookOpen,
       color: 'bg-purple-100 text-purple-800'
     },
     {
@@ -48,7 +48,7 @@ export default function About() {
       title: 'Industry Experience',
       subtitle: 'Project Intern at Matchday AI & FluentGrid',
       description: 'Delivered production applications serving 1,000+ users, optimized dashboards by 40%, and reduced processing time by 15%.',
-      icon: Zap,
+      icon: Briefcase,
       color: 'bg-amber-100 text-amber-800'
     },
     {
@@ -56,7 +56,7 @@ export default function About() {
       title: 'Community Builder',
       subtitle: 'Open Source & Tech Communities',
       description: 'Active participant in GirlScript Summer of Code, WomenTech Network, and Google Cloud Facilitator Program.',
-      icon: Users,
+      icon: Globe,
       color: 'bg-green-100 text-green-800'
     }
   ];
@@ -131,26 +131,26 @@ export default function About() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">My Story</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  My journey into data science began with a simple question: <em>How can we make machines understand 
-                  human language and make better decisions?</em> This curiosity led me from building web 
-                  applications in India to pursuing advanced ML research at Rutgers University.
+                  My journey into data science started with a realization: while building web applications in India, 
+                  I saw how much insight was locked in user data. I became obsessed with one question—<em>How can we 
+                  make machines understand human language and make better decisions?</em> This drove me to pursue 
+                  advanced studies in Machine Learning at Rutgers University.
                 </p>
                 <p>
-                  During my bachelor's in Computer Science at IIITM, I discovered my passion for bridging the gap 
-                  between data insights and user experiences. My internships at Matchday AI and FluentGrid taught 
-                  me how to build scalable applications that serve real users—one reached 1,000+ users and boosted 
-                  engagement by 40%.
+                  My bachelor's in Computer Science at IIITM is where I discovered my passion for bridging data 
+                  insights and user experiences. My internships at Matchday AI and FluentGrid taught me how to 
+                  build scalable applications that serve real users—at FluentGrid, my work reached 1,000+ users 
+                  and boosted engagement by 40%.
                 </p>
                 <p>
-                  Today, I'm deepening my expertise in Natural Language Processing and Statistical Learning while 
-                  contributing as a grader for Data Wrangling courses. My recent projects include a fake news 
-                  detection system with 98.45% accuracy and a comprehensive hospital management platform with 
-                  32+ routes and automated validation.
+                  Today, I'm specializing in Natural Language Processing and Statistical Learning. I've contributed 
+                  as a grader for Data Wrangling courses and worked on projects including a fake news detection system 
+                  achieving 98.45% accuracy through careful feature engineering, and a hospital management platform 
+                  handling 32+ routes with automated validation.
                 </p>
                 <p className="font-medium text-slate-800">
-                  When I'm not coding, you'll find me participating in tech communities like WomenTech Network 
-                  and contributing to open-source initiatives. I believe the best solutions come from diverse 
-                  perspectives and continuous collaboration.
+                  When I'm not coding, I'm active in communities like WomenTech Network and contributing to open-source 
+                  projects. I believe the best solutions emerge from diverse perspectives and continuous collaboration.
                 </p>
               </div>
             </motion.div>
@@ -204,7 +204,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-slate-900 mb-4">My Journey</h2>
-            <p className="text-lg text-slate-600">From curious coder to data science professional</p>
+            <p className="text-lg text-slate-600">Building intelligent systems, one project at a time</p>
           </motion.div>
 
           <div className="space-y-8">
@@ -248,11 +248,6 @@ export default function About() {
             <h2 className="text-4xl font-bold mb-6">Currently Focused On</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
-                <div className="text-3xl font-bold mb-2">🎓</div>
-                <div className="font-semibold mb-2">Academic Excellence</div>
-                <p className="text-blue-100 text-sm">Maintaining 3.57 GPA while diving deep into NLP and Statistical Learning</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
                 <div className="text-3xl font-bold mb-2">🔬</div>
                 <div className="font-semibold mb-2">Research Projects</div>
                 <p className="text-blue-100 text-sm">Building ML systems that combine accuracy with real-world applicability</p>
@@ -261,6 +256,11 @@ export default function About() {
                 <div className="text-3xl font-bold mb-2">💼</div>
                 <div className="font-semibold mb-2">Career Growth</div>
                 <p className="text-blue-100 text-sm">Seeking summer 2025 internships in Data Science & ML Engineering</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <div className="text-3xl font-bold mb-2">🎓</div>
+                <div className="font-semibold mb-2">Academic Excellence</div>
+                <p className="text-blue-100 text-sm">Maintaining 3.57 GPA while diving deep into NLP and Statistical Learning</p>
               </div>
             </div>
           </motion.div>

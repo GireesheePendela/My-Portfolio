@@ -6,8 +6,23 @@ import { createPageUrl } from './utils';
 export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showCopied, setShowCopied] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const email = 'gp590@scarletmail.rutgers.edu';
+    
+    // Try to open mail client
+    window.location.href = `mailto:${email}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,13 +156,18 @@ export default function Layout({ children }) {
             </div>
 
             {/* Contact Info */}
-            <div>
+            <div className="relative">
               <h3 className="font-semibold mb-4 text-amber-500">Get In Touch</h3>
               <div className="space-y-3">
-                <a href="mailto:gp590@scarletmail.rutgers.edu" className="flex items-center space-x-2 text-slate-400 hover:text-white text-sm transition-colors">
+                <button onClick={handleEmailClick} className="flex items-center space-x-2 text-slate-400 hover:text-white text-sm transition-colors">
                   <Mail className="w-4 h-4" />
                   <span>gp590@scarletmail.rutgers.edu</span>
-                </a>
+                </button>
+                {showCopied && (
+                  <div className="absolute -top-8 left-0 bg-white text-slate-900 text-xs px-3 py-1 rounded-lg shadow-lg">
+                    Email copied!
+                  </div>
+                )}
                 <a href="tel:+18483914488" className="flex items-center space-x-2 text-slate-400 hover:text-white text-sm transition-colors">
                   <Phone className="w-4 h-4" />
                   <span>+1 848-391-4488</span>
@@ -176,12 +196,12 @@ export default function Layout({ children }) {
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a
-                  href="mailto:gp590@scarletmail.rutgers.edu"
+                <button
+                  onClick={handleEmailClick}
                   className="w-9 h-9 bg-slate-800 hover:bg-blue-800 rounded-lg flex items-center justify-center transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
           </div>

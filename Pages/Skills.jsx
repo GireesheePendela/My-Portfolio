@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Database, Brain, Wrench, TrendingUp, CheckCircle2 } from 'lucide-react';
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('all');
+
+  const handleCategoryClick = (categoryId) => {
+    setActiveCategory(categoryId);
+    
+    setTimeout(() => {
+      const element = document.getElementById('skills-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+  };
 
   const skillCategories = [
     {
@@ -122,7 +133,7 @@ export default function Skills() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3 justify-center">
             <button
-              onClick={() => setActiveCategory('all')}
+              onClick={() => handleCategoryClick('all')}
               className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                 activeCategory === 'all'
                   ? 'bg-blue-800 text-white shadow-lg'
@@ -134,7 +145,7 @@ export default function Skills() {
             {skillCategories.map(category => (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => handleCategoryClick(category.id)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
                   activeCategory === category.id
                     ? 'bg-blue-800 text-white shadow-lg'
@@ -152,6 +163,7 @@ export default function Skills() {
       {/* Skills Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="skills-section" style={{ position: 'absolute', top: '-130px' }}></div>
           <div className="grid md:grid-cols-2 gap-8">
             {filteredSkills.map((skill, index) => (
               <motion.div
