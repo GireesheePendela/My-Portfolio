@@ -63,13 +63,6 @@ export default function Contact() {
       color: 'from-blue-600 to-blue-800'
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 848-391-4488',
-      link: 'tel:+18483914488',
-      color: 'from-purple-600 to-purple-800'
-    },
-    {
       icon: MapPin,
       label: 'Location',
       value: 'New Brunswick, NJ 08901',
@@ -110,8 +103,8 @@ export default function Contact() {
               Let's <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Connect</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              I'm actively seeking summer 2025 internships and full-time opportunities in Data Science, 
-              Machine Learning, and Software Engineering. Let's discuss how I can contribute to your team.
+              Open to opportunities in Data Science, Machine Learning, and Software Engineering. 
+              Let's connect to discuss how I can contribute to your team.
             </p>
           </motion.div>
         </div>
@@ -241,7 +234,7 @@ export default function Contact() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        placeholder="Opportunity Discussion"
+                        placeholder="What would you like to discuss?"
                         required
                         className="w-full"
                       />
@@ -320,7 +313,7 @@ export default function Contact() {
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border-2 border-blue-200">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Download Resume</h3>
                 <p className="text-slate-600 mb-6">
-                  Get a comprehensive overview of my experience, skills, and achievements.
+                  View my complete experience, skills, and projects in one document.
                 </p>
                 <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white py-6 text-lg font-semibold flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />

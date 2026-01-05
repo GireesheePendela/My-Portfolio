@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Users, Code, Cloud, BookOpen, Trophy, Star, ExternalLink } from 'lucide-react';
+import { Users, Code, Cloud, BookOpen, ExternalLink } from 'lucide-react';
 
 export default function Honors() {
   const certifications = [
@@ -10,9 +10,11 @@ export default function Honors() {
       year: '2022',
       icon: Code,
       color: 'from-blue-600 to-blue-800',
-      description: 'Professional certification validating Python programming skills with focus on AI and machine learning applications.',
+      description: 'Professional certification validating Python programming skills with focus on AI and machine learning applications',
       skills: ['Python', 'Machine Learning', 'Data Analysis', 'AI Fundamentals'],
-      badge: '🐍'
+      badge: '🐍',
+      credentialLabel: null,
+      credentialUrl: null
     },
     {
       title: 'Google Cloud Facilitator Program',
@@ -20,9 +22,35 @@ export default function Honors() {
       year: '2021',
       icon: Cloud,
       color: 'from-green-600 to-teal-600',
-      description: 'Selected as facilitator to guide peers through Google Cloud training programs and promote cloud computing adoption.',
+      description: 'Served as facilitator to guide peers through Google Cloud training programs and promote cloud computing adoption',
       skills: ['Cloud Computing', 'GCP', 'Leadership', 'Technical Training'],
-      badge: '☁️'
+      badge: '☁️',
+      credentialLabel: 'View Profile',
+      credentialUrl: 'https://www.skills.google/public_profiles/5386ef02-83ae-4c92-8366-3befc065ed4f'
+    },
+    {
+      title: 'SheCodes Plus',
+      organization: 'SheCodes',
+      year: '2022',
+      icon: Code,
+      color: 'from-amber-500 to-orange-600',
+      description: 'Advanced front-end development certification covering responsive design, JavaScript, and API integration',
+      skills: ['Front-End Development', 'JavaScript', 'HTML5', 'Node.js'],
+      badge: '⚛️',
+      credentialLabel: 'View Certificate',
+      credentialUrl: 'https://www.shecodes.io/certificates/4b19ae2bd1c70af7e01c64abb9b8cb09'
+    },
+    {
+      title: 'SheCodes Basics',
+      organization: 'SheCodes',
+      year: '2021',
+      icon: BookOpen,
+      color: 'from-purple-500 to-pink-500',
+      description: 'Foundational web development certification covering HTML, CSS, and JavaScript fundamentals',
+      skills: ['Front-End Development', 'HTML5', 'CSS3', 'JavaScript Basics'],
+      badge: '</>',
+      credentialLabel: 'View Certificate',
+      credentialUrl: 'https://www.shecodes.io/certificates/ae7a48c2c84af3fce466fafee5533b24'
     }
   ];
 
@@ -33,17 +61,17 @@ export default function Honors() {
       year: '2025',
       icon: BookOpen,
       color: 'from-purple-600 to-purple-800',
-      description: 'Evaluated student assignments, provided feedback, and supported data science education at graduate level.',
+      description: 'Evaluated student assignments, provided feedback at undergraduate level.',
       impact: 'Contributing to the next generation of data scientists',
       type: 'Academic Role'
     },
     {
       title: 'WomenTech Network',
-      organization: 'Session Monitor and Facilitator',
+      organization: 'Session Facilitator',
       year: '2022',
       icon: Users,
       color: 'from-pink-600 to-rose-600',
-      description: 'Facilitated technical sessions and supported women in technology through mentorship and community building.',
+      description: 'Facilitated technical sessions and mentored aspiring developers in an inclusive tech community.',
       impact: 'Promoting diversity and inclusion in tech',
       type: 'Community Leadership'
     },
@@ -53,36 +81,9 @@ export default function Honors() {
       year: '2022',
       icon: Code,
       color: 'from-amber-500 to-orange-600',
-      description: 'Participated in India\'s largest open-source program for students, contributing to real-world projects.',
+      description: 'Contributed bug fixes and features to open-source projects during India\'s largest student developer program.',
       impact: 'Gained practical experience in collaborative development',
       type: 'Open Source'
-    }
-  ];
-
-  const achievements = [
-    {
-      icon: Trophy,
-      title: 'Academic Excellence',
-      description: 'Maintained 3.57 GPA in graduate studies while working as grader',
-      highlight: '3.57 GPA'
-    },
-    {
-      icon: Star,
-      title: 'Teaching Recognition',
-      description: 'Selected as grader for Data Wrangling course at Rutgers University',
-      highlight: 'Grader Role'
-    },
-    {
-      icon: Users,
-      title: 'Community Impact',
-      description: 'Active participant in multiple tech communities promoting diversity',
-      highlight: '3+ Communities'
-    },
-    {
-      icon: Award,
-      title: 'Industry Experience',
-      description: 'Completed two successful internships with measurable impact',
-      highlight: '2 Internships'
     }
   ];
 
@@ -98,56 +99,18 @@ export default function Honors() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
-              Certifications & <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Achievements</span>
+              Certifications <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">& Training</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Professional certifications, community contributions, and recognition for technical excellence 
-              and leadership in data science and software development
+              Building expertise across data science, cloud computing, and full-stack development through professional certifications
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Achievement Highlights */}
-      <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={achievement.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <achievement.icon className="w-10 h-10 text-blue-800" />
-                </div>
-                <div className="text-3xl font-bold text-blue-800 mb-2">{achievement.highlight}</div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{achievement.title}</h3>
-                <p className="text-slate-600 text-sm">{achievement.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Certifications */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Professional Certifications</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Validated expertise through industry-recognized certification programs
-            </p>
-          </motion.div>
-
           <div className="grid md:grid-cols-2 gap-8">
             {certifications.map((cert, index) => (
               <motion.div
@@ -160,10 +123,7 @@ export default function Honors() {
               >
                 <div className={`bg-gradient-to-br ${cert.color} p-8 text-white`}>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
-                      <cert.icon className="w-8 h-8" />
-                    </div>
-                    <div className="text-6xl">{cert.badge}</div>
+                    {cert.badge && <div className="text-5xl" aria-hidden="true">{cert.badge}</div>}
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{cert.title}</h3>
                   <div className="flex items-center justify-between">
@@ -185,6 +145,23 @@ export default function Honors() {
                       ))}
                     </div>
                   </div>
+                  {cert.credentialLabel && (
+                    <div className="mt-6 flex items-center gap-2 text-blue-800 font-semibold">
+                      <ExternalLink className="w-4 h-4" />
+                      {cert.credentialUrl ? (
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {cert.credentialLabel}
+                        </a>
+                      ) : (
+                        <span>{cert.credentialLabel}</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -236,11 +213,7 @@ export default function Honors() {
                         </span>
                       </div>
                     </div>
-                    <p className="text-slate-600 leading-relaxed mb-4">{activity.description}</p>
-                    <div className="flex items-center gap-2 text-amber-600 font-semibold">
-                      <Star className="w-5 h-5" />
-                      <span>{activity.impact}</span>
-                    </div>
+                    <p className="text-slate-600 leading-relaxed">{activity.description}</p>
                   </div>
                 </div>
               </motion.div>

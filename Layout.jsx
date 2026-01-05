@@ -168,10 +168,6 @@ export default function Layout({ children }) {
                     Email copied!
                   </div>
                 )}
-                <a href="tel:+18483914488" className="flex items-center space-x-2 text-slate-400 hover:text-white text-sm transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 848-391-4488</span>
-                </a>
                 <div className="flex items-center space-x-2 text-slate-400 text-sm">
                   <MapPin className="w-4 h-4" />
                   <span>New Brunswick, NJ 08901</span>
