@@ -8,23 +8,10 @@ import { RESUME_CONFIG } from '../resumeConfig';
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
 
-  const handleResumeDownload = async (e) => {
+  const handleResumeDownload = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(RESUME_CONFIG.downloadUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Gireeshee_Pendela_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      // Fallback to direct link if fetch fails
-      window.open(RESUME_CONFIG.downloadUrl, '_blank');
-    }
+    // Direct redirect to Google Drive export URL
+    window.location.href = RESUME_CONFIG.downloadUrl;
   };
 
   const handleEmailClick = (e) => {
