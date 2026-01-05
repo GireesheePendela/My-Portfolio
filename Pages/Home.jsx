@@ -24,7 +24,6 @@ export default function Home() {
   const stats = [
     { value: '98.45%', label: 'ML Model Accuracy', icon: Brain },
     { value: '1,000+', label: 'Users Served', icon: Code },
-    { value: '32+', label: 'App Routes Built', icon: Database },
     { value: '40%', label: 'Code Optimization', icon: Sparkles }
   ];
 
@@ -146,7 +145,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
