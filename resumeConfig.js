@@ -13,7 +13,7 @@
 
 export const RESUME_CONFIG = {
   // Your Google Drive file ID
-  fileId: '1OfgSaJVApj3_9FsXq7iaN6KSACGtLwtX',
+  fileId: '1m43gaTWuIhZ-l6uG6BFbPKsIB9yJsJOQMsaSgJFrzJg',
   
   // Set to 'doc' if using Google Docs (recommended), or 'pdf' if using uploaded PDF
   fileType: 'doc', // Change to 'pdf' if you uploaded a PDF directly instead of using Google Docs

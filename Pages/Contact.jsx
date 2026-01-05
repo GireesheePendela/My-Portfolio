@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, Download, CheckCircle2, Lo
 import { Button } from '../Components/ui/button';
 import { Input } from '../Components/ui/input';
 import { Textarea } from '../Components/ui/textarea';
+import { RESUME_CONFIG } from '../resumeConfig';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,11 @@ export default function Contact() {
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
     });
+  };
+
+  const handleResumeDownload = (e) => {
+    e.preventDefault();
+    window.location.href = RESUME_CONFIG.downloadUrl;
   };
 
   const handleSubmit = async (e) => {
@@ -315,7 +321,10 @@ export default function Contact() {
                 <p className="text-slate-600 mb-6">
                   View my complete experience, skills, and projects in one document.
                 </p>
-                <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white py-6 text-lg font-semibold flex items-center justify-center gap-2">
+                <Button 
+                  onClick={handleResumeDownload}
+                  className="w-full bg-blue-800 hover:bg-blue-900 text-white py-6 text-lg font-semibold flex items-center justify-center gap-2"
+                >
                   <Download className="w-5 h-5" />
                   Download CV
                 </Button>
