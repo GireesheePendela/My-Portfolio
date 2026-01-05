@@ -7,36 +7,37 @@ export default function Projects() {
 
   const projects = [
     {
-      id: 'fake-news',
-      title: 'Fake News Detection using NLP',
-      tagline: 'ML-Powered Misinformation Classifier',
-      year: '2025',
-      category: 'Machine Learning',
-      icon: Brain,
-      color: 'from-blue-600 to-purple-600',
-      description: 'Engineered an advanced NLP system to combat misinformation by classifying news articles as real or fake using machine learning and feature engineering.',
-      challenge: 'With 44,000+ news articles, the challenge was to extract meaningful features and build a classifier that could accurately distinguish between authentic journalism and fake news while maintaining high precision to minimize false positives.',
-      solution: 'Implemented a comprehensive NLP pipeline using NLTK for preprocessing, TF-IDF for feature extraction (generating 218,495 features), and trained two classifiers: Logistic Regression (98.45% accuracy) and Multinomial Naive Bayes (~96% accuracy).',
+      id: 'portfolio',
+      title: 'Portfolio Website',
+      tagline: 'Interactive Personal Portfolio',
+      year: 'Jan 2026',
+      category: 'Front-End Development',
+      icon: Code,
+      color: 'from-cyan-600 to-blue-600',
+      description: 'Built a modern, fully responsive portfolio website showcasing projects, skills, and experience with smooth animations and interactive components.',
+      challenge: 'Creating a portfolio that stands out while maintaining fast performance, smooth navigation between pages, and an engaging user experience across all devices.',
+      solution: 'Developed using React with Vite for optimal performance, Tailwind CSS for responsive design, and Framer Motion for smooth animations. Features multi-page navigation with automatic scroll-to-top, interactive skills filtering, and email contact functionality.',
       impact: [
-        '98.45% accuracy with 98% precision/recall on 8,854 test samples',
-        '218,495 TF-IDF features engineered from 44,000+ articles',
-        'Interactive documentation published on GitHub Pages using Quarto',
-        '5+ visualizations including confusion matrices and word clouds'
+        'Smooth page transitions with automatic scroll-to-top navigation',
+        'Interactive skills filter with category-based sorting',
+        'Email clipboard copy functionality with visual feedback',
+        'Fully responsive design optimized for mobile, tablet, and desktop',
+        'Fast load times with Vite build optimization'
       ],
-      tech: ['Python', 'scikit-learn', 'NLTK', 'pandas', 'NumPy', 'TF-IDF', 'Matplotlib', 'Seaborn', 'Jupyter', 'Quarto'],
+      tech: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'JavaScript', 'HTML/CSS'],
       metrics: {
-        accuracy: '98.45%',
-        features: '218K+',
-        samples: '44,000+'
+        pages: '8',
+        components: '15+',
+        responsive: '100%'
       },
-      github: 'https://github.com/GireesheePendela',
+      github: 'https://github.com/GireesheePendela/My-Portfolio',
       demo: null
     },
     {
       id: 'hospital-system',
       title: 'Hospital Management System',
       tagline: 'Full-Stack Healthcare Platform',
-      year: '2025',
+      year: 'Oct 2025',
       category: 'Full-Stack Development',
       icon: Database,
       color: 'from-purple-600 to-pink-600',
@@ -56,7 +57,33 @@ export default function Projects() {
         tables: '12+',
         optimization: '40%'
       },
-      github: 'https://github.com/GireesheePendela',
+      github: 'https://github.com/DBMS16-954-694-01-HMS/DBMS_HMS_PROJ',
+      demo: null
+    },
+    {
+      id: 'fake-news',
+      title: 'Fake News Detection using NLP',
+      tagline: 'ML-Powered Misinformation Classifier',
+      year: 'Jun 2025',
+      category: 'Machine Learning',
+      icon: Brain,
+      color: 'from-blue-600 to-purple-600',
+      description: 'Engineered an advanced NLP system to combat misinformation by classifying news articles as real or fake using machine learning and feature engineering.',
+      challenge: 'With 44,000+ news articles, the challenge was to extract meaningful features and build a classifier that could accurately distinguish between authentic journalism and fake news while maintaining high precision to minimize false positives.',
+      solution: 'Implemented a comprehensive NLP pipeline using NLTK for preprocessing, TF-IDF for feature extraction (generating 218,495 features), and trained two classifiers: Logistic Regression (98.45% accuracy) and Multinomial Naive Bayes (~96% accuracy).',
+      impact: [
+        '98.45% accuracy with 98% precision/recall on 8,854 test samples',
+        '218,495 TF-IDF features engineered from 44,000+ articles',
+        'Interactive documentation published on GitHub Pages using Quarto',
+        '5+ visualizations including confusion matrices and word clouds'
+      ],
+      tech: ['Python', 'scikit-learn', 'NLTK', 'pandas', 'NumPy', 'TF-IDF', 'Matplotlib', 'Seaborn', 'Jupyter', 'Quarto'],
+      metrics: {
+        accuracy: '98.45%',
+        features: '218K+',
+        samples: '44,000+'
+      },
+      github: 'https://github.com/GireesheePendela/fake_news_detection',
       demo: null
     }
   ];
@@ -76,8 +103,8 @@ export default function Projects() {
               Featured <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Projects</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Real-world applications combining machine learning, data engineering, and full-stack development—
-              each solving complex problems with measurable impact
+              Machine learning and full-stack projects where I experiment, learn, and build—each one 
+              pushing my skills a little further
             </p>
           </motion.div>
         </div>

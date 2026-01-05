@@ -16,6 +16,12 @@ export default function Skills() {
     }, 50);
   };
 
+  const getLevelLabel = (level) => {
+    if (level >= 90) return 'Advanced';
+    if (level >= 80) return 'Proficient';
+    return 'Intermediate';
+  };
+
   const skillCategories = [
     {
       id: 'languages',
@@ -70,7 +76,7 @@ export default function Skills() {
         { name: 'Git & GitHub', level: 95, category: 'frameworks' },
         { name: 'Jupyter Notebook', level: 95, category: 'frameworks' },
         { name: 'VS Code', level: 90, category: 'frameworks' },
-        { name: 'Quarto', level: 80, category: 'frameworks' }
+        { name: 'Quarto', level: 79, category: 'frameworks' }
       ]
     },
     {
@@ -95,7 +101,6 @@ export default function Skills() {
     'Model Evaluation',
     'Full-Stack Development',
     'Database Design',
-    'API Development',
     'Web Applications',
     'Data Analysis',
     'Statistical Learning'
@@ -121,8 +126,7 @@ export default function Skills() {
               Technical <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Expertise</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              A comprehensive toolkit spanning machine learning, data engineering, and full-stack development—
-              battle-tested through academic projects and real-world applications
+              A diverse toolkit spanning machine learning, NLP, and data engineering
             </p>
           </motion.div>
         </div>
@@ -173,17 +177,11 @@ export default function Skills() {
                 transition={{ delay: index * 0.05 }}
                 className="bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all"
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-slate-900">{skill.name}</h3>
-                  <span className="text-sm font-semibold text-blue-800">{skill.level}%</span>
-                </div>
-                <div className="relative h-3 bg-slate-100 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.05 }}
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                  />
+                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                    {getLevelLabel(skill.level)}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -249,17 +247,9 @@ export default function Skills() {
                   {category.skills.map(skill => (
                     <div key={skill.name} className="flex items-center justify-between">
                       <span className="text-slate-700 font-medium">{skill.name}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                        <span className="text-sm font-semibold text-slate-500 w-12 text-right">
-                          {skill.level}%
-                        </span>
-                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-700">
+                        {getLevelLabel(skill.level)}
+                      </span>
                     </div>
                   ))}
                 </div>

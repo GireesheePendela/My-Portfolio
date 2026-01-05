@@ -93,11 +93,11 @@ export default function Experience() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
-              Professional <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Journey</span>
+             <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Experience</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              From building enterprise applications serving 1,000+ users to contributing to data science education—
-              a track record of delivering measurable impact
+              Real-world experience from internships and academic projects—building 
+              practical skills across data engineering, ML, and deployment
             </p>
           </motion.div>
         </div>
@@ -112,7 +112,7 @@ export default function Experience() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Career Highlights Timeline</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">At a Glance</h2>
           </motion.div>
 
           <div className="relative">

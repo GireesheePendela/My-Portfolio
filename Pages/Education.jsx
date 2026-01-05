@@ -13,11 +13,11 @@ export default function Education() {
       current: true,
       icon: GraduationCap,
       color: 'from-blue-600 to-purple-600',
-      description: 'Advanced graduate studies in data science, machine learning, and statistical analysis with focus on Natural Language Processing and database systems.',
+      description: 'Specializing in machine learning, NLP, and statistical analysis with hands-on experience in database systems.',
       coursework: [
         {
           name: 'Natural Language Processing',
-          description: 'Deep dive into text processing, sentiment analysis, and language models',
+          description: 'Text processing, sentiment analysis, and language model implementation',
           skills: ['NLTK', 'TF-IDF', 'Text Classification', 'Feature Engineering']
         },
         {
@@ -27,15 +27,24 @@ export default function Education() {
         },
         {
           name: 'Statistical Learning',
-          description: 'Advanced statistical methods and machine learning algorithms',
+          description: 'Statistical methods and ML algorithms with practical applications',
           skills: ['Regression', 'Classification', 'Model Evaluation', 'Cross-Validation']
+        },
+        {
+          name: 'Data Structures & Algorithms',
+          description: 'Fundamental algorithms, data structures, and computational complexity analysis',
+          skills: ['Algorithms', 'Data Structures', 'Complexity Analysis', 'Problem Solving']
+        },
+        {
+          name: 'Regression & Time Series Analysis',
+          description: 'Statistical modeling techniques for prediction and temporal data analysis',
+          skills: ['Linear Regression', 'Time Series', 'Forecasting', 'ANOVA']
+        },
+        {
+          name: 'Data Mining',
+          description: 'Techniques for discovering patterns and insights from large datasets',
+          skills: ['Clustering', 'Association Rules', 'Pattern Recognition', 'Big Data']
         }
-      ],
-      achievements: [
-        'Maintained 3.57 GPA while working as grader',
-        'Selected as Data Wrangling course grader',
-        'Active participant in research projects',
-        'Building expertise in NLP and statistical modeling'
       ]
     },
     {
@@ -47,34 +56,28 @@ export default function Education() {
       current: false,
       icon: Award,
       color: 'from-purple-600 to-pink-600',
-      description: 'Comprehensive computer science education covering algorithms, data structures, software engineering, and practical application development.',
+      description: 'Computer science foundation covering algorithms, data structures, software engineering, and application development.',
       coursework: [
         {
-          name: 'Data Structures & Algorithms',
-          description: 'Foundation in efficient problem-solving and algorithm design',
-          skills: ['Python', 'Algorithm Design', 'Complexity Analysis', 'Problem Solving']
+          name: 'Data Mining and Data Warehouse',
+          description: 'Techniques for discovering patterns and insights from large datasets',
+          skills: ['Data Mining', 'Data Warehousing', 'Pattern Recognition', 'Knowledge Discovery']
         },
         {
-          name: 'Database Management Systems',
-          description: 'Relational databases, SQL, and data management principles',
-          skills: ['SQL', 'Database Design', 'Transactions', 'Query Optimization']
-        },
-        {
-          name: 'Web Technologies',
-          description: 'Full-stack web development and modern frameworks',
-          skills: ['React', 'JavaScript', 'HTML/CSS', 'REST APIs']
-        },
-        {
-          name: 'Machine Learning Fundamentals',
-          description: 'Introduction to supervised and unsupervised learning',
+          name: 'Machine Learning',
+          description: 'Introduction to supervised and unsupervised learning algorithms',
           skills: ['Python', 'scikit-learn', 'Classification', 'Clustering']
+        },
+        {
+          name: 'Big Data Analytics',
+          description: 'Processing and analyzing large-scale datasets using distributed systems',
+          skills: ['Hadoop', 'Spark', 'MapReduce', 'Distributed Computing']
+        },
+        {
+          name: 'Computer Vision',
+          description: 'Image processing, object detection, and visual recognition techniques',
+          skills: ['Computer Vision', 'CNN Applications', 'Image Classification', 'Edge Detection']
         }
-      ],
-      achievements: [
-        'Completed two industry internships during studies',
-        'Built multiple full-stack projects',
-        'Participated in GirlScript Summer of Code',
-        'Active in WomenTech Network community'
       ]
     }
   ];
@@ -82,8 +85,8 @@ export default function Education() {
   const highlights = [
     {
       icon: Star,
-      title: 'Academic Excellence',
-      description: 'Maintained strong academic performance across graduate and undergraduate studies',
+      title: 'Strong Foundation',
+      description: 'Solid academic grounding through rigorous coursework and continuous learning',
       color: 'bg-yellow-100 text-yellow-800'
     },
     {
@@ -94,8 +97,8 @@ export default function Education() {
     },
     {
       icon: Award,
-      title: 'Teaching Experience',
-      description: 'Contributing back through grading and mentoring roles',
+      title: 'Academic Contribution',
+      description: 'Experience as a grader for Data Wrangling',
       color: 'bg-purple-100 text-purple-800'
     }
   ];
@@ -115,8 +118,8 @@ export default function Education() {
               Academic <span className="bg-gradient-to-r from-blue-800 to-purple-600 bg-clip-text text-transparent">Background</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              A strong foundation in computer science complemented by specialized graduate training in data science, 
-              machine learning, and natural language processing
+              Computer science foundation with graduate specialization in data science,
+               machine learning, and NLP
             </p>
           </motion.div>
         </div>
@@ -198,7 +201,7 @@ export default function Education() {
                   <p className="text-slate-600 leading-relaxed text-lg mb-8">{edu.description}</p>
 
                   {/* Relevant Coursework */}
-                  <div className="mb-8">
+                  <div>
                     <h4 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                       <BookOpen className="w-6 h-6 text-blue-600" />
                       Relevant Coursework
@@ -215,24 +218,6 @@ export default function Education() {
                               </span>
                             ))}
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                      <Award className="w-6 h-6 text-purple-600" />
-                      Key Achievements
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {edu.achievements.map((achievement, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Star className="w-4 h-4 text-green-600" />
-                          </div>
-                          <span className="text-slate-600 leading-relaxed">{achievement}</span>
                         </div>
                       ))}
                     </div>
