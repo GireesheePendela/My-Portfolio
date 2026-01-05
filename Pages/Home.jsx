@@ -3,9 +3,29 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Code, Database, Brain, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { createPageUrl } from '../utils';
+import { RESUME_CONFIG } from '../resumeConfig';
 
 export default function Home() {
   const [showCopied, setShowCopied] = useState(false);
+
+  const handleResumeDownload = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(RESUME_CONFIG.downloadUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Gireeshee_Pendela_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      // Fallback to direct link if fetch fails
+      window.open(RESUME_CONFIG.downloadUrl, '_blank');
+    }
+  };
 
   const handleEmailClick = (e) => {
     e.preventDefault();
@@ -246,8 +266,8 @@ export default function Home() {
                 Contact Me
               </Link>
               <a
-                href="/Gireeshee_Pendela_Resume .pdf"
-                download="Gireeshee_Pendela_Resume"
+                href={RESUME_CONFIG.downloadUrl}
+                onClick={handleResumeDownload}
                 className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-blue-900 transition-all flex items-center justify-center gap-2"
               >
                 <Download className="w-5 h-5" />
