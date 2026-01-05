@@ -17,6 +17,8 @@ A modern, responsive personal portfolio website showcasing my expertise in Data 
 
 ```
 My-Portfolio/
+├── public/                  # Static assets
+│   └── my_photo.jpg         # Profile photo
 ├── src/
 │   ├── App.jsx              # Main application component
 │   ├── main.jsx             # Entry point
