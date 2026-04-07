@@ -43,7 +43,7 @@ export default function Experience() {
       impact: 'Helping students build confidence with practical data wrangling while reinforcing my own technical foundation'
     },
     {
-      role: 'Project Intern',
+      role: 'Summer Intern',
       company: 'Matchday AI Technologies',
       location: 'India',
       period: '2023',
@@ -53,20 +53,20 @@ export default function Experience() {
       color: 'from-purple-600 to-purple-800',
       description: 'Built high-performance web applications focused on real-time sports analytics and data visualization.',
       responsibilities: [
-        'Implemented full-scale web application using ReactJS with optimized rendering',
-        'Developed dynamic front-end dashboard for real-time sports analytics',
-        'Optimized component architecture reducing page load time by ~20%',
-        'Enhanced data visualization clarity improving user engagement by ~40%'
+        'Built and shipped ReactJS modules for a real-time sports analytics dashboard',
+        'Redesigned component rendering and state updates, cutting page load time by about 20%',
+        'Delivered visualization components that improved chart readability and interaction quality',
+        'Supported product iterations using usage feedback and dashboard interaction patterns'
       ],
       skills: ['React', 'JavaScript', 'Data Visualization', 'Performance Optimization', 'REST APIs'],
       achievements: [
-        '~20% reduction in page load time through optimized component rendering',
-        '~40% increase in user engagement measured via interaction metrics',
-        'Successfully delivered production-ready real-time analytics dashboard'
+        'Reduced page load time by ~20% through component-level performance tuning',
+        'Improved user engagement by ~40% based on product interaction metrics',
+        'Delivered a production-ready real-time analytics dashboard within internship timelines'
       ]
     },
     {
-      role: 'Project Intern',
+      role: 'Data Science Intern',
       company: 'FluentGrid Limited',
       location: 'India',
       period: '2023',
@@ -76,17 +76,17 @@ export default function Experience() {
       color: 'from-amber-500 to-orange-600',
       description: 'Developed enterprise-scale web applications integrating Advanced Metering Infrastructure (AMI) for utility management.',
       responsibilities: [
-        'Built end-to-end web application using ReactJS, Angular, Bootstrap, and CSS3',
-        'Integrated AMI to optimize application workflows and reduce processing overhead',
-        'Supported 1,000+ users with improved front-end performance',
-        'Delivered complete solution within 3-month development cycle'
+        'Built end-to-end UI workflows with ReactJS, Angular, Bootstrap, and CSS3 for utility operations',
+        'Integrated AMI-driven data flows to streamline processing and reduce operational overhead',
+        'Optimized front-end behavior for a system supporting 1,000+ users',
+        'Delivered scoped features within a 3-month enterprise development cycle'
       ],
       skills: ['React', 'Angular', 'Bootstrap', 'CSS3', 'AMI Integration', 'Enterprise Development'],
       achievements: [
-        'Application successfully serving 1,000+ users',
-        '15% reduction in processing time achieved',
-        'Met aggressive 3-month development timeline',
-        'Improved overall front-end performance and user experience'
+        'Supported production usage for 1,000+ users in a utility management environment',
+        'Contributed to a ~15% reduction in processing time after AMI integration improvements',
+        'Met a 3-month delivery timeline for enterprise feature rollout',
+        'Improved front-end responsiveness and usability for daily operator workflows'
       ]
     }
   ];
@@ -96,7 +96,8 @@ export default function Experience() {
     { year: '2026 - Present', event: 'Teaching Assistant, Statistics', type: 'work' },
     { year: 'Sep - Dec 2025', event: 'Teaching Assistant, Data Wrangling', type: 'work' },
     { year: '2024', event: 'Graduated with BTech in Computer Science', type: 'education' },
-    { year: '2023', event: 'Project Intern at Matchday AI & FluentGrid', type: 'work' },
+    { year: 'Summer 2023', event: 'Summer Intern at Matchday AI Technologies', type: 'work' },
+    { year: '2023', event: 'Data Science Intern at FluentGrid Limited', type: 'work' },
     { year: '2022', event: 'Active in WomenTech & GirlScript Communities', type: 'community' },
     { year: '2021', event: 'Google Cloud Facilitator Program', type: 'certification' }
   ];
