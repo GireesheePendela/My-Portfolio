@@ -7,6 +7,32 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 'nyc-311-response-predictor',
+      title: 'NYC 311 Response Predictor',
+      tagline: 'Resolution Time Intelligence App',
+      year: 'Mar 2026',
+      category: 'Machine Learning',
+      icon: LineChart,
+      color: 'from-emerald-600 to-teal-600',
+      description: 'Built an end-to-end machine learning system for estimating NYC 311 complaint resolution time, from SQL-based analysis and feature engineering to model training, dashboarding, and deployment.',
+      challenge: '311 resolution time is influenced by agency, complaint type, borough, filing time, and seasonal behavior, so the raw records are noisy and not directly predictive.',
+      solution: 'Built a complete pipeline that cleans and structures the 311 data, engineers predictive features, compares regression models, and exposes results through a Plotly dashboard plus Gradio and FastAPI interfaces.',
+      impact: [
+        'Analyzed 589,802 NYC 311 complaints to uncover response-time patterns',
+        'Trained a Random Forest model that reached about 0.79 R²',
+        'Delivered an interactive dashboard and end-user prediction interface',
+        'Packaged the project for local execution and Hugging Face deployment'
+      ],
+      tech: ['Python', 'Pandas', 'scikit-learn', 'XGBoost', 'Plotly', 'FastAPI', 'Gradio', 'SQLAlchemy', 'PostgreSQL', 'Joblib'],
+      metrics: {
+        records: '589K+',
+        r2: '0.79',
+        model: 'Random Forest'
+      },
+      github: 'https://github.com/GireesheePendela/nyc-311-response-predictor',
+      demo: 'https://huggingface.co/spaces/Gireeshee/nyc-311-response-predictor'
+    },
+    {
       id: 'portfolio',
       title: 'Portfolio Website',
       tagline: 'Interactive Personal Portfolio',
@@ -14,9 +40,9 @@ export default function Projects() {
       category: 'Front-End Development',
       icon: Code,
       color: 'from-cyan-600 to-blue-600',
-      description: 'Built a modern, fully responsive portfolio website showcasing projects, skills, and experience with smooth animations and interactive components.',
-      challenge: 'Creating a portfolio that stands out while maintaining fast performance, smooth navigation between pages, and an engaging user experience across all devices.',
-      solution: 'Developed using React with Vite for optimal performance, Tailwind CSS for responsive design, and Framer Motion for smooth animations. Features multi-page navigation with automatic scroll-to-top, interactive skills filtering, and email contact functionality.',
+      description: 'Built a modern, fully responsive portfolio website that presents projects, skills, and experience with clean navigation and smooth motion design.',
+      challenge: 'The goal was to create a portfolio that feels polished and distinctive while still loading quickly and working smoothly across devices.',
+      solution: 'Developed with React and Vite for speed, Tailwind CSS for responsive layout, and Framer Motion for subtle animation. The site includes multi-page navigation, automatic scroll-to-top behavior, skills filtering, and contact interactions.',
       impact: [
         'Smooth page transitions with automatic scroll-to-top navigation',
         'Interactive skills filter with category-based sorting',
@@ -41,15 +67,15 @@ export default function Projects() {
       category: 'Full-Stack Development',
       icon: Database,
       color: 'from-purple-600 to-pink-600',
-      description: 'Designed and built a comprehensive hospital management system with role-based access control, automated workflows, and real-time data management for admins, doctors, and patients.',
-      challenge: 'Healthcare systems require complex data relationships, strict validation, and role-specific workflows while maintaining data integrity across appointments, billing, and medical records.',
-      solution: 'Built a Flask-based application with SQLite backend featuring 12+ normalized tables, 10+ database triggers for automated validation, and 32+ role-specific routes serving 3 distinct user types with reusable Jinja2 templates.',
+      description: 'Designed and built a hospital management system with role-based access control, automated workflows, and structured data management for admins, doctors, and patients.',
+      challenge: 'Healthcare systems need strict validation, clear role separation, and reliable data relationships across appointments, billing, and medical records.',
+      solution: 'Built a Flask application with an SQLite backend, normalized tables, automated database triggers, and role-specific routes served through reusable Jinja2 templates.',
       impact: [
-        '32+ role-specific application routes for seamless workflows',
+        '32+ role-specific application routes for streamlined workflows',
         '12+ normalized database tables with relational integrity',
-        '10+ automated triggers for data validation and consistency',
-        '~40% reduction in frontend code duplication through reusable templates',
-        '17+ dynamic pages with shared layout components'
+        '10+ automated triggers for validation and consistency',
+        'Reduced frontend duplication by about 40% through reusable templates',
+        '17+ dynamic pages built around shared layout components'
       ],
       tech: ['Python', 'Flask', 'SQLite', 'Bootstrap 5', 'JavaScript', 'HTML/CSS', 'Jinja2'],
       metrics: {
@@ -68,11 +94,11 @@ export default function Projects() {
       category: 'Machine Learning',
       icon: Brain,
       color: 'from-blue-600 to-purple-600',
-      description: 'Engineered an advanced NLP system to combat misinformation by classifying news articles as real or fake using machine learning and feature engineering.',
-      challenge: 'With 44,000+ news articles, the challenge was to extract meaningful features and build a classifier that could accurately distinguish between authentic journalism and fake news while maintaining high precision to minimize false positives.',
-      solution: 'Implemented a comprehensive NLP pipeline using NLTK for preprocessing, TF-IDF for feature extraction (generating 218,495 features), and trained two classifiers: Logistic Regression (98.45% accuracy) and Multinomial Naive Bayes (~96% accuracy).',
+      description: 'Engineered an NLP system for classifying news articles as real or fake using machine learning, preprocessing, and feature engineering.',
+      challenge: 'With 44,000+ news articles, the challenge was to extract useful signals and build a classifier that stayed precise while minimizing false positives.',
+      solution: 'Implemented a full NLP pipeline using NLTK preprocessing, TF-IDF feature extraction, and two classifiers: Logistic Regression and Multinomial Naive Bayes.',
       impact: [
-        '98.45% accuracy with 98% precision/recall on 8,854 test samples',
+        '98.45% accuracy with 98% precision and recall on 8,854 test samples',
         '218,495 TF-IDF features engineered from 44,000+ articles',
         'Interactive documentation published on GitHub Pages using Quarto',
         '5+ visualizations including confusion matrices and word clouds'

@@ -5,6 +5,30 @@ import { Users, Code, Cloud, BookOpen, ExternalLink } from 'lucide-react';
 export default function Honors() {
   const certifications = [
     {
+      title: 'Microsoft Azure AI Essentials: Workloads and Machine Learning on Azure',
+      organization: 'Microsoft',
+      year: '2026',
+      icon: Cloud,
+      color: 'from-blue-500 to-cyan-600',
+      description: 'Professional certification validating expertise in Azure AI services, machine learning workloads, and cloud-based AI solutions',
+      skills: ['Machine Learning', 'Artificial Intelligence', 'Azure AI Foundry', 'Cloud Computing'],
+      badge: '☁️',
+      credentialLabel: 'View Certificate',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/824b63dc751ffd50068c1aedc404ce553c864c5f05176d705f81'
+    },
+    {
+      title: 'Introduction to Data Science',
+      organization: 'Cisco Networking Academy',
+      year: '2026',
+      icon: Code,
+      color: 'from-cyan-600 to-blue-600',
+      description: 'Certification validating foundational data science concepts, analytical thinking, and practical data manipulation techniques',
+      skills: ['Data Analysis', 'Data Science', 'Machine Learning', 'Data Engineering'],
+      badge: '📊',
+      credentialLabel: 'View Badge',
+      credentialUrl: 'https://www.credly.com/badges/97b2b938-0322-4408-bc68-04086ba08392'
+    },
+    {
       title: 'AI Planet Python Certification',
       organization: 'AI Planet',
       year: '2022',
@@ -56,13 +80,23 @@ export default function Honors() {
 
   const activities = [
     {
-      title: 'Data Wrangling Grader',
+      title: 'Teaching Assistant, Statistics',
+      organization: 'Rutgers University',
+      year: '2026 - Present',
+      icon: BookOpen,
+      color: 'from-emerald-600 to-teal-700',
+      description: 'Supporting students with statistics concepts, problem solving, and applied quantitative analysis.',
+      impact: 'Helping students build confidence with statistical reasoning',
+      type: 'Academic Role'
+    },
+    {
+      title: 'Teaching Assistant, Data Wrangling',
       organization: 'Rutgers University',
       year: '2025',
       icon: BookOpen,
       color: 'from-purple-600 to-purple-800',
-      description: 'Evaluated student assignments, provided feedback at undergraduate level.',
-      impact: 'Contributing to the next generation of data scientists',
+      description: 'Supported undergraduate students with data wrangling assignments and provided detailed feedback.',
+      impact: 'Helping students build practical data skills',
       type: 'Academic Role'
     },
     {

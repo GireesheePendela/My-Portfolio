@@ -5,23 +5,42 @@ import { Briefcase, TrendingUp, Users, Zap, CheckCircle2, Calendar } from 'lucid
 export default function Experience() {
   const experiences = [
     {
-      role: 'Data Wrangling Grader',
+      role: 'Teaching Assistant, Statistics',
       company: 'Rutgers University',
       location: 'New Brunswick, NJ',
-      period: '2025',
+      period: 'Jan 2026 - Present',
       current: true,
       type: 'Academic',
       icon: Users,
-      color: 'from-blue-600 to-blue-800',
-      description: 'Contributing to data science education by evaluating student assignments and providing constructive feedback for Data Wrangling coursework.',
+      color: 'from-emerald-600 to-teal-700',
+      description: 'Assisting with introductory statistics instruction by supporting students on concepts, exercises, and applied problem solving.',
       responsibilities: [
-        'Review and grade data preprocessing and transformation assignments',
-        'Provide detailed feedback on code quality, efficiency, and best practices',
-        'Help students understand complex data manipulation techniques',
-        'Ensure consistent evaluation standards across assignments'
+        'Supported students with statistics concepts, homework, and exam preparation',
+        'Explained probability, inference, and data interpretation in accessible terms',
+        'Assisted with grading and provided clear, actionable feedback',
+        'Helped students connect statistical methods to real-world datasets'
+      ],
+      skills: ['Statistics', 'Data Analysis', 'Teaching', 'Communication', 'Problem Solving'],
+      impact: 'Supporting students in statistics while strengthening my understanding of analytical thinking and quantitative reasoning'
+    },
+    {
+      role: 'Teaching Assistant, Data Wrangling',
+      company: 'Rutgers University',
+      location: 'New Brunswick, NJ',
+      period: 'Sep 2025 - Dec 2025',
+      current: false,
+      type: 'Academic',
+      icon: Users,
+      color: 'from-blue-600 to-blue-800',
+      description: 'Supported undergraduate Data Wrangling coursework by guiding students through data preparation, transformation, and analysis tasks.',
+      responsibilities: [
+        'Reviewed and assessed data preprocessing and transformation assignments',
+        'Provided feedback on code quality, efficiency, and best practices',
+        'Helped students understand core data manipulation techniques',
+        'Maintained consistent evaluation standards across assignments'
       ],
       skills: ['Python', 'pandas', 'Data Preprocessing', 'Teaching', 'Technical Communication'],
-      impact: 'Supporting the next generation of data scientists while reinforcing my own mastery of data wrangling techniques'
+      impact: 'Helping students build confidence with practical data wrangling while reinforcing my own technical foundation'
     },
     {
       role: 'Project Intern',
@@ -74,7 +93,8 @@ export default function Experience() {
 
   const timeline = [
     { year: '2024 - Present', event: 'MS Data Science at Rutgers University', type: 'education' },
-    { year: '2025', event: 'Data Wrangling Grader', type: 'work' },
+    { year: '2026 - Present', event: 'Teaching Assistant, Statistics', type: 'work' },
+    { year: 'Sep - Dec 2025', event: 'Teaching Assistant, Data Wrangling', type: 'work' },
     { year: '2024', event: 'Graduated with BTech in Computer Science', type: 'education' },
     { year: '2023', event: 'Project Intern at Matchday AI & FluentGrid', type: 'work' },
     { year: '2022', event: 'Active in WomenTech & GirlScript Communities', type: 'community' },

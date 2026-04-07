@@ -29,25 +29,35 @@ export default function Home() {
   };
 
   const stats = [
-    { value: '98.45%', label: 'ML Model Accuracy', icon: Brain },
-    { value: '1,000+', label: 'Users Served', icon: Code },
-    { value: '40%', label: 'Code Optimization', icon: Sparkles }
+    { value: '98.45%', label: 'Model Accuracy', icon: Brain },
+    { value: '589K+', label: 'Data Points Processed', icon: Database },
+    { value: '32+', label: 'Full-Stack Routes', icon: Code }
   ];
 
   const featuredProjects = [
     {
+      title: 'NYC 311 Response Predictor',
+      description: 'End-to-end machine learning app for predicting NYC 311 complaint resolution time with dashboards and a deployed API',
+      tech: ['Python', 'Plotly', 'FastAPI', 'Gradio'],
+      metric: '589K+ Records',
+      color: 'from-emerald-600 to-teal-600',
+      github: 'https://github.com/GireesheePendela/nyc-311-response-predictor'
+    },
+    {
       title: 'Fake News Detection',
-      description: 'NLP-powered classifier achieving 98.45% accuracy using TF-IDF and Logistic Regression',
+      description: 'NLP classifier that flags misinformation with 98.45% accuracy using TF-IDF and Logistic Regression',
       tech: ['Python', 'NLTK', 'scikit-learn', 'TF-IDF'],
       metric: '218K+ Features',
-      color: 'from-blue-600 to-purple-600'
+      color: 'from-blue-600 to-purple-600',
+      github: 'https://github.com/GireesheePendela/fake_news_detection'
     },
     {
       title: 'Hospital Management System',
-      description: 'Full-stack Flask application with role-based workflows and automated data validation',
+      description: 'Full-stack Flask application with role-based workflows, validation, and reusable templates',
       tech: ['Flask', 'SQLite', 'Bootstrap', 'JavaScript'],
       metric: '12+ DB Tables',
-      color: 'from-purple-600 to-pink-600'
+      color: 'from-purple-600 to-pink-600',
+      github: 'https://github.com/DBMS16-954-694-01-HMS/DBMS_HMS_PROJ'
     }
   ];
 
@@ -190,33 +200,40 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
-              <motion.div
+              <a
                 key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all group"
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl mb-4 flex items-center justify-center`}>
-                  <Code className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-800 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map(tech => (
-                    <span key={tech} className="px-3 py-1 bg-blue-50 text-blue-800 rounded-lg text-xs font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                  <span className="text-amber-600 font-semibold text-sm">{project.metric}</span>
-                  <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all group cursor-pointer h-full"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl mb-4 flex items-center justify-center`}>
+                    <Code className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-800 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map(tech => (
+                      <span key={tech} className="px-3 py-1 bg-blue-50 text-blue-800 rounded-lg text-xs font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <span className="text-amber-600 font-semibold text-sm">{project.metric}</span>
+                    <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
+                  </div>
+                </motion.div>
+              </a>
             ))}
           </div>
 

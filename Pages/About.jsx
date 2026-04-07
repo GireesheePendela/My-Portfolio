@@ -17,7 +17,7 @@ export default function About() {
     {
       icon: BookOpen,
       title: 'Continuous Learning',
-      description: 'From grading Data Wrangling to exploring cutting-edge NLP techniques, I never stop growing.'
+      description: 'From teaching Data Wrangling to exploring cutting-edge NLP techniques, I never stop growing.'
     },
     {
       icon: Users,
@@ -31,7 +31,7 @@ export default function About() {
       year: '2024 - Present',
       title: 'Rutgers University',
       subtitle: 'Master of Science in Data Science',
-      description: 'Deepening expertise in NLP, statistical learning, and database systems while contributing as a Data Wrangling grader.',
+      description: 'Deepening expertise in NLP, statistical learning, and database systems while contributing as a Teaching Assistant for Data Wrangling.',
       icon: GraduationCap,
       color: 'bg-blue-100 text-blue-800'
     },
@@ -144,7 +144,7 @@ export default function About() {
                 </p>
                 <p>
                   Today, I'm specializing in Natural Language Processing and Statistical Learning. I've contributed 
-                  as a grader for Data Wrangling courses and worked on projects including a fake news detection system 
+                  as a Teaching Assistant for Data Wrangling courses and worked on projects including a fake news detection system 
                   achieving 98.45% accuracy through careful feature engineering, and a hospital management platform 
                   handling 32+ routes with automated validation.
                 </p>

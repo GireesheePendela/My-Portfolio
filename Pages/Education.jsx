@@ -98,7 +98,7 @@ export default function Education() {
     {
       icon: Award,
       title: 'Academic Contribution',
-      description: 'Experience as a grader for Data Wrangling',
+      description: 'Experience as a Teaching Assistant for Data Wrangling',
       color: 'bg-purple-100 text-purple-800'
     }
   ];
